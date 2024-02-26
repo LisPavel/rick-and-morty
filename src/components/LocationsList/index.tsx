@@ -1,6 +1,7 @@
 import React from "react";
 import Location, { LocationData } from "../Location";
 import "./index.scss";
+import { List, ListItem } from "../List";
 
 interface Props {
   items: LocationData[];
@@ -8,13 +9,13 @@ interface Props {
 
 const LocationsList = ({ items }: Props) => {
   return (
-    <ul className="locations-list">
+    <List className="locations-list">
       {items.map((l) => (
-        <li key={l.id} className="locations-list-item">
+        <ListItem key={l.id} className="locations-list-item">
           <Location data={l} />
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 

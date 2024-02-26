@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./index.scss";
 import Episode, { EpisodeData } from "../Episode";
+import { List, ListItem } from "../List";
 
 interface Props {
   items: EpisodeData[];
@@ -8,13 +9,13 @@ interface Props {
 
 const EpisodesList = ({ items }: Props) => {
   return (
-    <ul className="episodes-list">
+    <List className="episodes-list">
       {items.map((e) => (
-        <li key={e.id} className="episodes-list-item">
+        <ListItem key={e.id} className="episodes-list-item">
           <Episode data={e} />
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 

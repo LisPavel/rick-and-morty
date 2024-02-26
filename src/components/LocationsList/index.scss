@@ -1,8 +1,0 @@
-.locations-list {
-  list-style: none;
-  &-item {
-    &:not(:last-child) {
-      border-bottom: 1px solid slategray;
-    }
-  }
-}
