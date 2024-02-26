@@ -1,0 +1,12 @@
+.nav-list {
+  display: flex;
+  margin-inline: auto;
+  justify-content: center;
+  box-shadow: 0 0 1rem slategray;
+  list-style: none;
+
+  a {
+    padding: 1rem 1.5rem;
+    display: block;
+  }
+}

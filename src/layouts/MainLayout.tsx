@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import "./MainLayout.scss";
 
 const MainLayout = () => {
   return (
     <>
       <nav>
-        <ul>
+        <ul className="nav-list">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
