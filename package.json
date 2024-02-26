@@ -1,5 +1,5 @@
 {
-  "name": "rs-m4-3-custom-hooks",
+  "name": "rick-and-morty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.71.1",
     "typescript": "^4.9.5"
   },
   "scripts": {
