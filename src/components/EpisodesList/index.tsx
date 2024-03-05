@@ -1,7 +1,9 @@
 import * as React from "react";
+import { EpisodeData } from "../Episode";
+import { List } from "antd";
+import { NavLink } from "react-router-dom";
+// import { List, ListItem } from "../List";
 import "./index.scss";
-import Episode, { EpisodeData } from "../Episode";
-import { List, ListItem } from "../List";
 
 interface Props {
   items: EpisodeData[];
@@ -9,13 +11,18 @@ interface Props {
 
 const EpisodesList = ({ items }: Props) => {
   return (
-    <List className="episodes-list">
-      {items.map((e) => (
-        <ListItem key={e.id} className="episodes-list-item">
-          <Episode data={e} />
-        </ListItem>
-      ))}
-    </List>
+    <List
+      itemLayout="horizontal"
+      dataSource={items}
+      renderItem={(item) => (
+        <List.Item key={item.id}>
+          <List.Item.Meta
+            title={<NavLink to={`/episodes/${item.id}`}>{item.name}</NavLink>}
+            description={item.episode}
+          />
+        </List.Item>
+      )}
+    />
   );
 };
 
