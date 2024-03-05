@@ -1,7 +1,8 @@
 import React from "react";
-import Location, { LocationData } from "../Location";
+import { LocationData } from "../Location";
 import "./index.scss";
-import { List, ListItem } from "../List";
+import { List } from "antd";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   items: LocationData[];
@@ -9,13 +10,18 @@ interface Props {
 
 const LocationsList = ({ items }: Props) => {
   return (
-    <List className="locations-list">
-      {items.map((l) => (
-        <ListItem key={l.id} className="locations-list-item">
-          <Location data={l} />
-        </ListItem>
-      ))}
-    </List>
+    <List
+      itemLayout="horizontal"
+      dataSource={items}
+      renderItem={(item) => (
+        <List.Item key={item.id}>
+          <List.Item.Meta
+            title={<NavLink to={`/locations/${item.id}`}>{item.name}</NavLink>}
+            description={item.type}
+          />
+        </List.Item>
+      )}
+    />
   );
 };
 
