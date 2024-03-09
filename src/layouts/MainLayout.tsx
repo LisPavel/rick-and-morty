@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import "./MainLayout.scss";
 import { Layout, Menu } from "antd";
 import type { MenuProps } from "antd";
+import "./MainLayout.scss";
 
 const { Header, Content } = Layout;
 
