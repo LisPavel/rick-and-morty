@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { EpisodeData } from "../components/Episode";
 import {
   Button,
+  Card,
   Descriptions,
   DescriptionsProps,
   Space,
@@ -39,12 +40,13 @@ const EpisodePage = () => {
   }, [data]);
 
   return (
-    <Descriptions
-      title={<EpisodeTitle data={data} />}
-      bordered
-      items={items.current}
-      style={{ marginTop: "1rem" }}
-    />
+    <Card title={<EpisodeTitle data={data} />}>
+      <Descriptions
+        bordered
+        items={items.current}
+        style={{ marginTop: "1rem" }}
+      />
+    </Card>
   );
 };
 
