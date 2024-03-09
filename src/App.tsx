@@ -6,6 +6,7 @@ import Characters from "./pages/Characters";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import EpisodePage from "./pages/EpisodePage";
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="episodes" element={<Episodes />} />
+          <Route path="episodes">
+            <Route index element={<Episodes />} />
+            <Route path=":id" element={<EpisodePage />} />
+          </Route>
           <Route path="locations" element={<Locations />} />
           <Route path="characters" element={<Characters />} />
           <Route path="/*" element={<NotFound />} />
