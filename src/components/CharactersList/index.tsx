@@ -1,16 +1,17 @@
 import React from "react";
 import { CharacterData } from "../Character";
-import { Avatar, List } from "antd";
+import { Avatar, List, ListProps } from "antd";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 
-interface Props {
+interface Props extends ListProps<CharacterData> {
   items: CharacterData[];
 }
 
-const CharactersList = ({ items }: Props) => {
+const CharactersList = ({ items, ...rest }: Props) => {
   return (
     <List
+      {...rest}
       itemLayout="horizontal"
       dataSource={items}
       renderItem={(item) => (

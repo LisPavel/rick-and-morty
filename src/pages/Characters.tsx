@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import characters from "../mock/characters.json";
 import { CharacterData } from "../components/Character";
 import CharactersList from "../components/CharactersList";
-import { Typography } from "antd";
+import { Card, Typography } from "antd";
 
 const { Title } = Typography;
 
@@ -10,8 +10,9 @@ const Characters = () => {
   const [charactersArray] = useState<CharacterData[]>(characters ?? []);
   return (
     <>
-      <Title>Characters</Title>
-      <CharactersList items={charactersArray} />
+      <Card title={<Title style={{ margin: 0 }}>Characters</Title>}>
+        <CharactersList items={charactersArray} style={{ overflow: "auto" }} />
+      </Card>
     </>
   );
 };
