@@ -1,7 +1,13 @@
 import React from "react";
+import logo from "../assets/images/Rick-And-Morty-Zeichen.png";
+import "./Home.scss";
 
 const Home = () => {
-  return <h1>Home</h1>;
+  return (
+    <div className="home-page">
+      <img src={logo} />
+    </div>
+  );
 };
 
 export default Home;
