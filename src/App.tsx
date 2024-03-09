@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import EpisodePage from "./pages/EpisodePage";
 import LocationPage from "./pages/LocationPage";
+import CharacterPage from "./pages/CharacterPage";
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
             <Route index element={<Locations />} />
             <Route path=":id" element={<LocationPage />} />
           </Route>
-          <Route path="characters" element={<Characters />} />
+          <Route path="characters">
+            <Route index element={<Characters />} />
+            <Route path=":id" element={<CharacterPage />} />
+          </Route>
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
