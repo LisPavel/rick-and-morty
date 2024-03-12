@@ -1,7 +1,12 @@
+import { Card, Typography } from "antd";
 import React from "react";
 
 const NotFound = () => {
-  return <h1>Not Found</h1>;
+  return (
+    <Card style={{ margin: "auto" }}>
+      <Typography.Title>Not Found</Typography.Title>
+    </Card>
+  );
 };
 
 export default NotFound;
