@@ -4,6 +4,7 @@ import { EpisodeData } from "../components/Episode";
 import EpisodesList from "../components/EpisodesList";
 import { Card, Flex, Form, Select, Typography } from "antd";
 import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";
+import { useSearchParams } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -16,11 +17,18 @@ export const compareByCreationDate: <T extends { created: string }>(
 
 const Episodes = () => {
   const [episodesArray] = useState<EpisodeData[]>(episodes ?? []);
-  const { array: sortedArray, toggleOrder } = useArrayOrder<EpisodeData>(
+  const [searchParams, setSearchParams] = useSearchParams();
+  const {
+    array: sortedArray,
+    order,
+    toggleOrder,
+  } = useArrayOrder(
     episodesArray,
     compareByCreationDate,
+    (searchParams.get("order") as OrderDirection) ?? undefined,
   );
   const handleChangeSortDirection = (value: OrderDirection) => {
+    setSearchParams(value ? { order: value } : {});
     toggleOrder(value ?? "");
   };
   return (
@@ -39,6 +47,7 @@ const Episodes = () => {
                   { value: "asc", label: "Ascending" },
                   { value: "desc", label: "Descending" },
                 ]}
+                value={order}
                 onChange={handleChangeSortDirection}
               />
             </Form.Item>
