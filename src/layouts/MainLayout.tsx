@@ -23,10 +23,6 @@ const items: MenuProps["items"] = [
     label: <NavLink to="/characters">Characters</NavLink>,
     key: "characters",
   },
-  {
-    label: <NavLink to="/plumbus">Plumbus</NavLink>,
-    key: "plumbus",
-  },
 ];
 
 const MainLayout = () => {
