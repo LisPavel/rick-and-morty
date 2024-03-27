@@ -23,6 +23,10 @@ const items: MenuProps["items"] = [
     label: <NavLink to="/characters">Characters</NavLink>,
     key: "characters",
   },
+  {
+    label: <NavLink to="/login">Login</NavLink>,
+    key: "login",
+  },
 ];
 
 const MainLayout = () => {

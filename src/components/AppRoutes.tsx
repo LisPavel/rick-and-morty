@@ -9,6 +9,7 @@ import LocationPage from "../pages/LocationPage";
 import Characters from "../pages/Characters";
 import CharacterPage from "../pages/CharacterPage";
 import NotFound from "../pages/NotFound";
+import Login from "../pages/Login";
 
 const AppRoutes = () => {
   return (
@@ -27,6 +28,7 @@ const AppRoutes = () => {
           <Route index element={<Characters />} />
           <Route path=":id" element={<CharacterPage />} />
         </Route>
+        <Route path="login" element={<Login />} />
         <Route path="/*" element={<NotFound />} />
       </Route>
     </Routes>
