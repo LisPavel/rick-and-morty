@@ -17,15 +17,16 @@ interface Props {
 }
 
 const Character = ({ data }: Props) => {
+  const { image, name, status, species, type, gender, created } = data;
   return (
     <div className="character">
-      <img src={data.image} alt={data.name} />
-      <div className="character-name">{data.name}</div>
-      <div className="character-status">{data.status}</div>
-      <div className="character-species">{data.species}</div>
-      <div className="character-type">{data.type}</div>
-      <div className="character-gender">{data.gender}</div>
-      <div className="character-created">{data.created}</div>
+      <img src={image} alt={name} />
+      <div className="character-name">{name}</div>
+      <div className="character-status">{status}</div>
+      <div className="character-species">{species}</div>
+      <div className="character-type">{type}</div>
+      <div className="character-gender">{gender}</div>
+      <div className="character-created">{created}</div>
     </div>
   );
 };
