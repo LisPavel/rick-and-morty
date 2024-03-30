@@ -1,5 +1,7 @@
 import React from "react";
 import { Form, Input, Card, FormProps, Button } from "antd";
+import { useAuth } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 type FieldType = {
   username?: string;
@@ -9,16 +11,25 @@ const { Item } = Form;
 const { Password } = Input;
 
 const Login = () => {
-  const handleFinish: FormProps<FieldType>["onFinish"] = (values) => {
+  const { user, login, logout } = useAuth();
+  const navigate = useNavigate();
+  // TODO: remove console.logs
+  const handleFinish: FormProps<Required<FieldType>>["onFinish"] = (values) => {
     console.log(values);
+    login(values, () => navigate("/"));
   };
   const handleFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
     errorInfo,
   ) => {
     console.log(errorInfo);
   };
+  // TODO: remove auth user info
   return (
     <Card style={{ maxWidth: "700px", margin: "auto" }}>
+      <p>{user?.name || "not loggen in"}</p>
+      {!!user && (
+        <Button onClick={() => logout(() => navigate("/"))}>logout</Button>
+      )}
       <Form
         name="basic"
         labelCol={{ span: 8 }}
