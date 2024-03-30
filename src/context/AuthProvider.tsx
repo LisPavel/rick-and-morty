@@ -18,16 +18,33 @@ export const useAuth = () => {
   return useContext(AuthContext) as AuthObj;
 };
 
+const USER_KEY = "user";
+
+const getUser = (): UserInfo | null => {
+  const user = localStorage.getItem(USER_KEY);
+  if (!user) return null;
+  return JSON.parse(user);
+};
+const saveUser = (user: UserInfo) => {
+  localStorage.setItem(USER_KEY, JSON.stringify(user));
+};
+const removeUser = () => {
+  localStorage.removeItem(USER_KEY);
+};
+
 const AuthProvider = ({ children }: PropsWithChildren) => {
-  const [user, setUser] = useState<UserInfo | null>(null);
+  const [user, setUser] = useState<UserInfo | null>(getUser);
   const value: AuthObj = {
     user,
     login: ({ username }, callback) => {
-      setUser({ name: username });
+      const newUser = { name: username };
+      setUser(newUser);
+      saveUser(newUser);
       callback?.();
     },
     logout: (callback) => {
       setUser(null);
+      removeUser();
       callback?.();
     },
   };
