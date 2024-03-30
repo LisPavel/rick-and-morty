@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Input, Card, FormProps, Button } from "antd";
 import { useAuth } from "../context/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type FieldType = {
   username?: string;
@@ -12,11 +12,13 @@ const { Password } = Input;
 
 const Login = () => {
   const { user, login, logout } = useAuth();
+  const location = useLocation();
+  const from = location.state?.from || "/";
   const navigate = useNavigate();
   // TODO: remove console.logs
   const handleFinish: FormProps<Required<FieldType>>["onFinish"] = (values) => {
     console.log(values);
-    login(values, () => navigate("/"));
+    login(values, () => navigate(from, { replace: true }));
   };
   const handleFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
     errorInfo,
