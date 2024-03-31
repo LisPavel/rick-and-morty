@@ -1,16 +1,17 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home";
-import Episodes from "../pages/Episodes";
-import EpisodePage from "../pages/EpisodePage";
-import Locations from "../pages/Locations";
-import LocationPage from "../pages/LocationPage";
-import Characters from "../pages/Characters";
-import CharacterPage from "../pages/CharacterPage";
-import NotFound from "../pages/NotFound";
-import Login from "../pages/Login";
 import PrivateRoute from "./PrivateRouts";
+
+const Home = lazy(() => import("../pages/Home"));
+const Episodes = lazy(() => import("../pages/Episodes"));
+const MainLayout = lazy(() => import("../layouts/MainLayout"));
+const EpisodePage = lazy(() => import("../pages/EpisodePage"));
+const Locations = lazy(() => import("../pages/Locations"));
+const LocationPage = lazy(() => import("../pages/LocationPage"));
+const Characters = lazy(() => import("../pages/Characters"));
+const CharacterPage = lazy(() => import("../pages/CharacterPage"));
+const NotFound = lazy(() => import("../pages/NotFound"));
+const Login = lazy(() => import("../pages/Login"));
 
 const AppRoutes = () => {
   return (
