@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRouts";
+import ErrorBoundary from "./ErrorBoundary";
 
 const Home = lazy(() => import("../pages/Home"));
 const Episodes = lazy(() => import("../pages/Episodes"));
@@ -17,13 +18,22 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
+        <Route
+          index
+          element={
+            <ErrorBoundary>
+              <Home />
+            </ErrorBoundary>
+          }
+        />
         <Route path="episodes">
           <Route
             index
             element={
               <PrivateRoute>
-                <Episodes />
+                <ErrorBoundary>
+                  <Episodes />
+                </ErrorBoundary>
               </PrivateRoute>
             }
           />
@@ -31,7 +41,9 @@ const AppRoutes = () => {
             path=":id"
             element={
               <PrivateRoute>
-                <EpisodePage />
+                <ErrorBoundary>
+                  <EpisodePage />
+                </ErrorBoundary>
               </PrivateRoute>
             }
           />
@@ -41,7 +53,9 @@ const AppRoutes = () => {
             index
             element={
               <PrivateRoute>
-                <Locations />
+                <ErrorBoundary>
+                  <Locations />
+                </ErrorBoundary>
               </PrivateRoute>
             }
           />
@@ -49,7 +63,9 @@ const AppRoutes = () => {
             path=":id"
             element={
               <PrivateRoute>
-                <LocationPage />
+                <ErrorBoundary>
+                  <LocationPage />
+                </ErrorBoundary>
               </PrivateRoute>
             }
           />
@@ -59,7 +75,9 @@ const AppRoutes = () => {
             index
             element={
               <PrivateRoute>
-                <Characters />
+                <ErrorBoundary>
+                  <Characters />
+                </ErrorBoundary>
               </PrivateRoute>
             }
           />
@@ -67,13 +85,29 @@ const AppRoutes = () => {
             path=":id"
             element={
               <PrivateRoute>
-                <CharacterPage />
+                <ErrorBoundary>
+                  <CharacterPage />
+                </ErrorBoundary>
               </PrivateRoute>
             }
           />
         </Route>
-        <Route path="login" element={<Login />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route
+          path="login"
+          element={
+            <ErrorBoundary>
+              <Login />
+            </ErrorBoundary>
+          }
+        />
+        <Route
+          path="/*"
+          element={
+            <ErrorBoundary>
+              <NotFound />
+            </ErrorBoundary>
+          }
+        />
       </Route>
     </Routes>
   );

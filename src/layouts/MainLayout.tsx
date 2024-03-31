@@ -3,6 +3,7 @@ import { Layout, Menu, Spin } from "antd";
 import React, { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./MainLayout.scss";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 const { Header, Content } = Layout;
 
@@ -76,7 +77,9 @@ const MainLayout = () => {
             </Spin>
           }
         >
-          <Outlet />
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
         </Suspense>
       </Content>
     </Layout>
