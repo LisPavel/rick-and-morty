@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import episodes from "../mock/episode.json";
+import React, { useCallback, useRef, useState } from "react";
 import { EpisodeData } from "../components/Episode";
 import EpisodesList from "../components/EpisodesList";
 import { Card, Flex, Form, Select, Typography } from "antd";
 import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";
 import { useSearchParams } from "react-router-dom";
+import { useGetData } from "../hooks/useGetData";
 
 const { Title } = Typography;
 
@@ -16,7 +16,34 @@ export const compareByCreationDate: <T extends { created: string }>(
 };
 
 const Episodes = () => {
-  const [episodesArray] = useState<EpisodeData[]>(episodes ?? []);
+  const [page, setPage] = useState(1);
+  const {
+    data: episodesArray,
+    loading,
+    hasMore,
+  } = useGetData<EpisodeData>("episode", page);
+
+  const observer = useRef<IntersectionObserver | null>(null);
+  const lastItemRef = useCallback(
+    (node: HTMLElement | null) => {
+      if (loading) {
+        return;
+      }
+      if (observer.current) {
+        observer.current.disconnect();
+      }
+      observer.current = new IntersectionObserver(([node]) => {
+        if (!node) return;
+        if (!node.isIntersecting || !hasMore) return;
+        setPage((prevState) => prevState + 1);
+      });
+      if (node) {
+        observer.current.observe(node);
+      }
+    },
+    [loading, hasMore],
+  );
+
   const [searchParams, setSearchParams] = useSearchParams();
   const {
     array: sortedArray,
@@ -54,7 +81,12 @@ const Episodes = () => {
           </Flex>
         }
       >
-        <EpisodesList items={sortedArray} />
+        <EpisodesList
+          items={sortedArray}
+          loading={loading}
+          hasMore={hasMore}
+          lastItemRef={lastItemRef}
+        />
       </Card>
     </>
   );
