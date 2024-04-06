@@ -6,23 +6,42 @@ import "./index.scss";
 
 interface Props extends ListProps<CharacterData> {
   items: CharacterData[];
+  loading: boolean;
+  lastItemRef?: React.Ref<HTMLElement>;
 }
 
-const CharactersList = ({ items, ...rest }: Props) => {
+const CharactersList = ({ items, lastItemRef, ...rest }: Props) => {
   return (
     <List
       {...rest}
       itemLayout="horizontal"
       dataSource={items}
-      renderItem={(item) => (
-        <List.Item key={item.id}>
-          <List.Item.Meta
-            avatar={<Avatar src={item.image} />}
-            title={<NavLink to={`/characters/${item.id}`}>{item.name}</NavLink>}
-            description={item.species}
-          />
-        </List.Item>
-      )}
+      renderItem={(item, index) => {
+        if (index + 1 === items.length - 5) {
+          return (
+            <List.Item key={item.id} ref={lastItemRef}>
+              <List.Item.Meta
+                avatar={<Avatar src={item.image} />}
+                title={
+                  <NavLink to={`/characters/${item.id}`}>{item.name}</NavLink>
+                }
+                description={item.species}
+              />
+            </List.Item>
+          );
+        }
+        return (
+          <List.Item key={item.id}>
+            <List.Item.Meta
+              avatar={<Avatar src={item.image} />}
+              title={
+                <NavLink to={`/characters/${item.id}`}>{item.name}</NavLink>
+              }
+              description={item.species}
+            />
+          </List.Item>
+        );
+      }}
     />
     // <List>
     //   {items.map((c) => (
