@@ -1,9 +1,9 @@
-import type { MenuProps } from "antd";
-import { Layout, Menu, Spin } from "antd";
 import React, { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import type { MenuProps } from "antd";
+import { Layout, Menu, Spin } from "antd";
+import { ErrorBoundary } from "../../components/ErrorBoundary";
 import "./MainLayout.scss";
-import { ErrorBoundary } from "../components/ErrorBoundary";
 
 const { Header, Content } = Layout;
 
@@ -30,7 +30,7 @@ const items: MenuProps["items"] = [
   },
 ];
 
-const MainLayout = () => {
+export const MainLayout = () => {
   return (
     <Layout
       style={{
@@ -85,5 +85,3 @@ const MainLayout = () => {
     </Layout>
   );
 };
-
-export default MainLayout;

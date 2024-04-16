@@ -5,7 +5,11 @@ import { ErrorBoundary } from "../ErrorBoundary";
 
 const Home = lazy(() => import("../../pages/Home"));
 const Episodes = lazy(() => import("../../pages/Episodes"));
-const MainLayout = lazy(() => import("../../layouts/MainLayout"));
+const MainLayout = lazy(() =>
+  import("../../layouts/MainLayout").then(({ MainLayout }) => ({
+    default: MainLayout,
+  })),
+);
 const EpisodePage = lazy(() => import("../../pages/EpisodePage"));
 const Locations = lazy(() => import("../../pages/Locations"));
 const LocationPage = lazy(() => import("../../pages/LocationPage"));
