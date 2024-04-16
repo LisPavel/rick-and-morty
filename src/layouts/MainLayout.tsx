@@ -1,8 +1,9 @@
-import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import { Layout, Menu } from "antd";
 import type { MenuProps } from "antd";
+import { Layout, Menu, Spin } from "antd";
+import React, { Suspense } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import "./MainLayout.scss";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 const { Header, Content } = Layout;
 
@@ -59,7 +60,27 @@ const MainLayout = () => {
         />
       </Header>
       <Content style={{ padding: "0 48px" }}>
-        <Outlet />
+        <Suspense
+          fallback={
+            <Spin
+              tip="Loading..."
+              size="large"
+              style={{
+                top: "50%",
+                left: "50%",
+                position: "fixed",
+                transform: "translate(-50%, -50%)",
+                zIndex: 1,
+              }}
+            >
+              <div></div>
+            </Spin>
+          }
+        >
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
+        </Suspense>
       </Content>
     </Layout>
   );

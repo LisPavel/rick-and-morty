@@ -7,21 +7,39 @@ import "./index.scss";
 
 interface Props {
   items: EpisodeData[];
+  loading: boolean;
+  hasMore: boolean;
+  lastItemRef?: React.Ref<HTMLElement>;
 }
 
-const EpisodesList = ({ items }: Props) => {
+const EpisodesList = ({ items, loading, lastItemRef }: Props) => {
   return (
     <List
       itemLayout="horizontal"
       dataSource={items}
-      renderItem={(item) => (
-        <List.Item key={item.id}>
-          <List.Item.Meta
-            title={<NavLink to={`/episodes/${item.id}`}>{item.name}</NavLink>}
-            description={item.episode}
-          />
-        </List.Item>
-      )}
+      renderItem={(item, index) => {
+        if (index + 1 === items.length - 5) {
+          return (
+            <List.Item key={item.id} ref={lastItemRef}>
+              <List.Item.Meta
+                title={
+                  <NavLink to={`/episodes/${item.id}`}>{item.name}</NavLink>
+                }
+                description={item.episode}
+              />
+            </List.Item>
+          );
+        }
+        return (
+          <List.Item key={item.id}>
+            <List.Item.Meta
+              title={<NavLink to={`/episodes/${item.id}`}>{item.name}</NavLink>}
+              description={item.episode}
+            />
+          </List.Item>
+        );
+      }}
+      loading={loading}
     />
   );
 };
