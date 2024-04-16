@@ -14,9 +14,6 @@ export interface AuthObj {
 
 export const AuthContext = createContext<AuthObj | null>(null);
 
-export const useAuth = () => {
-  return useContext(AuthContext) as AuthObj;
-};
 
 const USER_KEY = "user";
 

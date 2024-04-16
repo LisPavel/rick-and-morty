@@ -1,7 +1,7 @@
 import React from "react";
 
 import { PropsWithChildren } from "react";
-import { useAuth } from "../../context/AuthProvider";
+import { useAuth } from "../../hooks/useAuth";
 import { Navigate, useLocation } from "react-router-dom";
 
 export const PrivateRoute = ({ children }: PropsWithChildren) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Input, Card, FormProps, Button } from "antd";
-import { useAuth } from "../context/AuthProvider";
+import { useAuth } from "../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 
 type FieldType = {

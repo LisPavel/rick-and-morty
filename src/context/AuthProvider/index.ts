@@ -1,5 +1,5 @@
-import { AuthContext, AuthProvider, useAuth } from "./AuthProvider";
+import { AuthContext, AuthProvider } from "./AuthProvider";
 import type { AuthObj, UserInfo } from "./AuthProvider";
 
-export { AuthContext, AuthProvider, useAuth };
+export { AuthContext, AuthProvider };
 export type { AuthObj, UserInfo };
