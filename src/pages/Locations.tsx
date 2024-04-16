@@ -2,10 +2,10 @@ import React, { /*  useEffect, */ useCallback, useRef, useState } from "react";
 import { LocationsList } from "../components/LocationsList";
 import { LocationData } from "../components/Location";
 import { Card, Flex, Form, Select, Typography } from "antd";
-import { compareByCreationDate } from "./Episodes";
 import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";
 import { useSearchParams } from "react-router-dom";
 import { useGetData } from "../hooks/useGetData";
+import { compareByCreationDate } from "../utils";
 
 const { Title } = Typography;
 

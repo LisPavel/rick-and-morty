@@ -1,21 +1,15 @@
-import React, { useCallback, useRef, useState } from "react";
-import { EpisodeData } from "../components/Episode";
-import { EpisodesList } from "../components/EpisodesList";
 import { Card, Flex, Form, Select, Typography } from "antd";
-import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";
+import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useGetData } from "../hooks/useGetData";
+import { EpisodeData } from "../../components/Episode";
+import { EpisodesList } from "../../components/EpisodesList";
+import { OrderDirection, useArrayOrder } from "../../hooks/useArrayOrder";
+import { useGetData } from "../../hooks/useGetData";
+import { compareByCreationDate } from "../../utils";
 
 const { Title } = Typography;
 
-export const compareByCreationDate: <T extends { created: string }>(
-  a: T,
-  b: T,
-) => number = (a, b) => {
-  return new Date(a.created).getTime() - new Date(b.created).getTime();
-};
-
-const Episodes = () => {
+export const Episodes = () => {
   const [page, setPage] = useState(1);
   const {
     data: episodesArray,
@@ -91,5 +85,3 @@ const Episodes = () => {
     </>
   );
 };
-
-export default Episodes;

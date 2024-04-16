@@ -4,7 +4,11 @@ import { PrivateRoute } from "../PrivateRoute";
 import { ErrorBoundary } from "../ErrorBoundary";
 
 const Home = lazy(() => import("../../pages/Home"));
-const Episodes = lazy(() => import("../../pages/Episodes"));
+const Episodes = lazy(() =>
+  import("../../pages/Episodes").then(({ Episodes }) => ({
+    default: Episodes,
+  })),
+);
 const MainLayout = lazy(() =>
   import("../../layouts/MainLayout").then(({ MainLayout }) => ({
     default: MainLayout,

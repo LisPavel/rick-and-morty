@@ -2,10 +2,10 @@ import React, { useCallback, useRef, useState } from "react";
 import { CharacterData } from "../../components/Character";
 import { CharactersList } from "../../components/CharactersList";
 import { Card, Flex, Form, Select, Typography } from "antd";
-import { compareByCreationDate } from "../Episodes";
 import { OrderDirection, useArrayOrder } from "../../hooks/useArrayOrder";
 import { useSearchParams } from "react-router-dom";
 import { useGetData } from "../../hooks/useGetData";
+import { compareByCreationDate } from "../../utils";
 
 const { Title } = Typography;
 
