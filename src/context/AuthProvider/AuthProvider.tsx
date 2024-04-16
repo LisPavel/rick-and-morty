@@ -32,7 +32,7 @@ const removeUser = () => {
   localStorage.removeItem(USER_KEY);
 };
 
-const AuthProvider = ({ children }: PropsWithChildren) => {
+export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState<UserInfo | null>(getUser);
   const value: AuthObj = {
     user,
@@ -50,5 +50,3 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
-
-export default AuthProvider;
