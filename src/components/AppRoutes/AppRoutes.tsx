@@ -14,7 +14,11 @@ const EpisodePage = lazy(() => import("../../pages/EpisodePage"));
 const Locations = lazy(() => import("../../pages/Locations"));
 const LocationPage = lazy(() => import("../../pages/LocationPage"));
 const Characters = lazy(() => import("../../pages/Characters"));
-const CharacterPage = lazy(() => import("../../pages/CharacterPage"));
+const CharacterPage = lazy(() =>
+  import("../../pages/CharacterPage").then(({ CharacterPage }) => ({
+    default: CharacterPage,
+  })),
+);
 const NotFound = lazy(() => import("../../pages/NotFound"));
 const Login = lazy(() => import("../../pages/Login"));
 

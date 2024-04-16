@@ -1,24 +1,17 @@
-import React, { useEffect, useRef } from "react";
-import {
-  Button,
-  Card,
-  Descriptions,
-  DescriptionsProps,
-  Flex,
-  Space,
-  Typography,
-} from "antd";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
-import characters from "../mock/characters.json";
-import { LeftOutlined } from "@ant-design/icons";
-import { CharacterData } from "../components/Character";
+import { Card, Descriptions, DescriptionsProps, Flex } from "antd";
+import { useEffect, useRef } from "react";
+import { Navigate, useParams } from "react-router-dom";
+import { CharacterData } from "../../components/Character";
+import characters from "../../mock/characters.json";
+import { CharacterTitle } from "./components/CharacterTitle";
 
-const { Title } = Typography;
 type Keys = keyof CharacterData;
 const notDescriptionKeys: Keys[] = ["name", "image"];
 
-const toDescProps = (item: CharacterData): DescriptionsProps["items"] => {
-  return Object.entries(item)
+const toDescProps = (
+  item: CharacterData | undefined,
+): DescriptionsProps["items"] => {
+  return Object.entries(item ?? [])
     .filter(([key]) => !notDescriptionKeys.includes(key as Keys))
     .map(([key, value]) => ({
       label: key.replace(/^./, (match) => match.toUpperCase()),
@@ -27,19 +20,18 @@ const toDescProps = (item: CharacterData): DescriptionsProps["items"] => {
     }));
 };
 
-const CharacterPage = () => {
+export const CharacterPage = () => {
   const { id } = useParams<{ id: string }>();
   const data = characters.find((c) => c.id.toString() === id);
-
-  if (data == null) {
-    return <Navigate to="/not-found" />;
-  }
-
   const items = useRef(toDescProps(data));
 
   useEffect(() => {
     items.current = toDescProps(data);
   }, [data]);
+
+  if (data == null) {
+    return <Navigate to="/not-found" />;
+  }
 
   return (
     <Card title={<CharacterTitle data={data} />}>
@@ -64,27 +56,3 @@ const CharacterPage = () => {
     </Card>
   );
 };
-
-interface TitleProps {
-  data: CharacterData;
-}
-
-const CharacterTitle = ({ data }: TitleProps) => {
-  const navigate = useNavigate();
-  return (
-    <Space>
-      <Button
-        type="primary"
-        shape="circle"
-        icon={<LeftOutlined />}
-        onClick={() => navigate(-1)}
-      />
-
-      <Title level={3} style={{ margin: 0 }}>
-        {data.name}
-      </Title>
-    </Space>
-  );
-};
-
-export default CharacterPage;
