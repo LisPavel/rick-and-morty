@@ -3,7 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "../PrivateRoute";
 import { ErrorBoundary } from "../ErrorBoundary";
 
-const Home = lazy(() => import("../../pages/Home"));
+const Home = lazy(() =>
+  import("../../pages/Home").then(({ Home }) => ({ default: Home })),
+);
 const Episodes = lazy(() =>
   import("../../pages/Episodes").then(({ Episodes }) => ({
     default: Episodes,
