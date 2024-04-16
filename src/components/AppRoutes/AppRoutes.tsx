@@ -1,20 +1,20 @@
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import PrivateRoute from "./PrivateRouts";
-import ErrorBoundary from "./ErrorBoundary";
+import { PrivateRoute } from "../PrivateRoute";
+import { ErrorBoundary } from "../ErrorBoundary";
 
-const Home = lazy(() => import("../pages/Home"));
-const Episodes = lazy(() => import("../pages/Episodes"));
-const MainLayout = lazy(() => import("../layouts/MainLayout"));
-const EpisodePage = lazy(() => import("../pages/EpisodePage"));
-const Locations = lazy(() => import("../pages/Locations"));
-const LocationPage = lazy(() => import("../pages/LocationPage"));
-const Characters = lazy(() => import("../pages/Characters"));
-const CharacterPage = lazy(() => import("../pages/CharacterPage"));
-const NotFound = lazy(() => import("../pages/NotFound"));
-const Login = lazy(() => import("../pages/Login"));
+const Home = lazy(() => import("../../pages/Home"));
+const Episodes = lazy(() => import("../../pages/Episodes"));
+const MainLayout = lazy(() => import("../../layouts/MainLayout"));
+const EpisodePage = lazy(() => import("../../pages/EpisodePage"));
+const Locations = lazy(() => import("../../pages/Locations"));
+const LocationPage = lazy(() => import("../../pages/LocationPage"));
+const Characters = lazy(() => import("../../pages/Characters"));
+const CharacterPage = lazy(() => import("../../pages/CharacterPage"));
+const NotFound = lazy(() => import("../../pages/NotFound"));
+const Login = lazy(() => import("../../pages/Login"));
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
@@ -112,5 +112,3 @@ const AppRoutes = () => {
     </Routes>
   );
 };
-
-export default AppRoutes;

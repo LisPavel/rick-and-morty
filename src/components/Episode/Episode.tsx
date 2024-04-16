@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+import "./Episode.scss";
 
 export interface EpisodeData {
   id: number;
@@ -13,7 +13,7 @@ interface Props {
   data: EpisodeData;
 }
 
-const Episode = ({ data }: Props) => {
+export const Episode = ({ data }: Props) => {
   return (
     <div className="episode">
       <div className="episode-name">{data.name}</div>
@@ -23,5 +23,3 @@ const Episode = ({ data }: Props) => {
     </div>
   );
 };
-
-export default Episode;

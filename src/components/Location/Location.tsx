@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+import "./Location.scss";
 
 export interface LocationData {
   id: number;
@@ -13,7 +13,7 @@ interface Props {
   data: LocationData;
 }
 
-const Location = ({ data }: Props) => {
+export const Location = ({ data }: Props) => {
   return (
     <div className="location">
       <div className="location-name">{data.name}</div>
@@ -23,5 +23,3 @@ const Location = ({ data }: Props) => {
     </div>
   );
 };
-
-export default Location;

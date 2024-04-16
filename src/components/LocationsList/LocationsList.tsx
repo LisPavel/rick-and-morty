@@ -1,8 +1,8 @@
 import React from "react";
 import { LocationData } from "../Location";
-import "./index.scss";
 import { List } from "antd";
 import { NavLink } from "react-router-dom";
+import "./LocationsList.scss";
 
 interface Props {
   items: LocationData[];
@@ -10,7 +10,7 @@ interface Props {
   lastItemRef?: React.Ref<HTMLElement>;
 }
 
-const LocationsList = ({ items, lastItemRef, ...rest }: Props) => {
+export const LocationsList = ({ items, lastItemRef, ...rest }: Props) => {
   return (
     <List
       {...rest}
@@ -43,5 +43,3 @@ const LocationsList = ({ items, lastItemRef, ...rest }: Props) => {
     />
   );
 };
-
-export default LocationsList;

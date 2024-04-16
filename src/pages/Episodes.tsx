@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { EpisodeData } from "../components/Episode";
-import EpisodesList from "../components/EpisodesList";
+import { EpisodesList } from "../components/EpisodesList";
 import { Card, Flex, Form, Select, Typography } from "antd";
 import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";
 import { useSearchParams } from "react-router-dom";

@@ -3,7 +3,7 @@ import { EpisodeData } from "../Episode";
 import { List } from "antd";
 import { NavLink } from "react-router-dom";
 // import { List, ListItem } from "../List";
-import "./index.scss";
+import "./EpisodesList.scss";
 
 interface Props {
   items: EpisodeData[];
@@ -12,7 +12,7 @@ interface Props {
   lastItemRef?: React.Ref<HTMLElement>;
 }
 
-const EpisodesList = ({ items, loading, lastItemRef }: Props) => {
+export const EpisodesList = ({ items, loading, lastItemRef }: Props) => {
   return (
     <List
       itemLayout="horizontal"
@@ -43,5 +43,3 @@ const EpisodesList = ({ items, loading, lastItemRef }: Props) => {
     />
   );
 };
-
-export default EpisodesList;

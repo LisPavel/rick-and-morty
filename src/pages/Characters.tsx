@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { CharacterData } from "../components/Character";
-import CharactersList from "../components/CharactersList";
+import { CharactersList } from "../components/CharactersList";
 import { Card, Flex, Form, Select, Typography } from "antd";
 import { compareByCreationDate } from "./Episodes";
 import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";

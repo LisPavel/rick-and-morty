@@ -1,10 +1,10 @@
 import React from "react";
 
 import { PropsWithChildren } from "react";
-import { useAuth } from "../context/AuthProvider";
+import { useAuth } from "../../context/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 
-const PrivateRoute = ({ children }: PropsWithChildren) => {
+export const PrivateRoute = ({ children }: PropsWithChildren) => {
   const { user } = useAuth();
   const location = useLocation();
   if (user == null) {
@@ -12,5 +12,3 @@ const PrivateRoute = ({ children }: PropsWithChildren) => {
   }
   return <>{children}</>;
 };
-
-export default PrivateRoute;

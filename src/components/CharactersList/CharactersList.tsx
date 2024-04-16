@@ -2,7 +2,7 @@ import React from "react";
 import { CharacterData } from "../Character";
 import { Avatar, List, ListProps } from "antd";
 import { NavLink } from "react-router-dom";
-import "./index.scss";
+import "./CharactersList.scss";
 
 interface Props extends ListProps<CharacterData> {
   items: CharacterData[];
@@ -10,7 +10,7 @@ interface Props extends ListProps<CharacterData> {
   lastItemRef?: React.Ref<HTMLElement>;
 }
 
-const CharactersList = ({ items, lastItemRef, ...rest }: Props) => {
+export const CharactersList = ({ items, lastItemRef, ...rest }: Props) => {
   return (
     <List
       {...rest}
@@ -43,15 +43,5 @@ const CharactersList = ({ items, lastItemRef, ...rest }: Props) => {
         );
       }}
     />
-    // <List>
-    //   {items.map((c) => (
-    //     <ListItem key={c.id}>
-    //       {" "}
-    //       <Character data={c} />
-    //     </ListItem>
-    //   ))}
-    // </List>
   );
 };
-
-export default CharactersList;

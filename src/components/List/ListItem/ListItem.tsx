@@ -1,7 +1,7 @@
 import React, { HTMLAttributes, PropsWithChildren } from "react";
 import "./ListItem.scss";
 
-const ListItem = ({
+export const ListItem = ({
   className,
   children,
   ...rest
@@ -13,5 +13,3 @@ const ListItem = ({
     </li>
   );
 };
-
-export default ListItem;

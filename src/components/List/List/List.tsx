@@ -2,7 +2,7 @@ import React, { HTMLAttributes, PropsWithChildren } from "react";
 
 import "./List.scss";
 
-const List = ({
+export const List = ({
   children,
   className,
   ...rest
@@ -14,5 +14,3 @@ const List = ({
     </ul>
   );
 };
-
-export default List;
