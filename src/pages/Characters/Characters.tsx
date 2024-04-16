@@ -1,15 +1,15 @@
 import React, { useCallback, useRef, useState } from "react";
-import { CharacterData } from "../components/Character";
-import { CharactersList } from "../components/CharactersList";
+import { CharacterData } from "../../components/Character";
+import { CharactersList } from "../../components/CharactersList";
 import { Card, Flex, Form, Select, Typography } from "antd";
-import { compareByCreationDate } from "./Episodes";
-import { OrderDirection, useArrayOrder } from "../hooks/useArrayOrder";
+import { compareByCreationDate } from "../Episodes";
+import { OrderDirection, useArrayOrder } from "../../hooks/useArrayOrder";
 import { useSearchParams } from "react-router-dom";
-import { useGetData } from "../hooks/useGetData";
+import { useGetData } from "../../hooks/useGetData";
 
 const { Title } = Typography;
 
-const Characters = () => {
+export const Characters = () => {
   const [page, setPage] = useState(1);
   const {
     data: charactersArray,
@@ -84,5 +84,3 @@ const Characters = () => {
     </>
   );
 };
-
-export default Characters;

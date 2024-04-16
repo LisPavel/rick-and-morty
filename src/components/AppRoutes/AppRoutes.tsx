@@ -13,7 +13,11 @@ const MainLayout = lazy(() =>
 const EpisodePage = lazy(() => import("../../pages/EpisodePage"));
 const Locations = lazy(() => import("../../pages/Locations"));
 const LocationPage = lazy(() => import("../../pages/LocationPage"));
-const Characters = lazy(() => import("../../pages/Characters"));
+const Characters = lazy(() =>
+  import("../../pages/Characters").then(({ Characters }) => ({
+    default: Characters,
+  })),
+);
 const CharacterPage = lazy(() =>
   import("../../pages/CharacterPage").then(({ CharacterPage }) => ({
     default: CharacterPage,
