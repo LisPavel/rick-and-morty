@@ -1,4 +1,4 @@
-import logo from "../assets/images/Rick-And-Morty-Zeichen.png";
+import logo from "@/assets/images/Rick-And-Morty-Zeichen.png";
 import "./Home.scss";
 
 export const Home = () => {
