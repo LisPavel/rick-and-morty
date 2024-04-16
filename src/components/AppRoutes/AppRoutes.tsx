@@ -22,7 +22,11 @@ const EpisodePage = lazy(() =>
   })),
 );
 const Locations = lazy(() => import("../../pages/Locations"));
-const LocationPage = lazy(() => import("../../pages/LocationPage"));
+const LocationPage = lazy(() =>
+  import("../../pages/LocationPage").then(({ LocationPage }) => ({
+    default: LocationPage,
+  })),
+);
 const Characters = lazy(() =>
   import("../../pages/Characters").then(({ Characters }) => ({
     default: Characters,
