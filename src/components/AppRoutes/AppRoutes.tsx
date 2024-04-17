@@ -42,7 +42,9 @@ const CharacterPage = lazy(() =>
   })),
 );
 const NotFound = lazy(() => import("../../pages/NotFound"));
-const Login = lazy(() => import("../../pages/Login"));
+const Login = lazy(() =>
+  import("../../pages/Login").then(({ Login }) => ({ default: Login })),
+);
 
 export const AppRoutes = () => {
   return (

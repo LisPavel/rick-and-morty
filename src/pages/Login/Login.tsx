@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Input, Card, FormProps, Button } from "antd";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 
 type FieldType = {
@@ -10,7 +10,7 @@ type FieldType = {
 const { Item } = Form;
 const { Password } = Input;
 
-const Login = () => {
+export const Login = () => {
   const { login } = useAuth();
   const location = useLocation();
   const from = location.state?.from || "/";
@@ -44,5 +44,3 @@ const Login = () => {
     </Card>
   );
 };
-
-export default Login;
