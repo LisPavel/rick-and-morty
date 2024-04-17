@@ -41,7 +41,11 @@ const CharacterPage = lazy(() =>
     default: CharacterPage,
   })),
 );
-const NotFound = lazy(() => import("../../pages/NotFound"));
+const NotFound = lazy(() =>
+  import("../../pages/NotFound").then(({ NotFound }) => ({
+    default: NotFound,
+  })),
+);
 const Login = lazy(() =>
   import("../../pages/Login").then(({ Login }) => ({ default: Login })),
 );
