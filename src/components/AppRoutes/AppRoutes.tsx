@@ -21,7 +21,11 @@ const EpisodePage = lazy(() =>
     default: EpisodePage,
   })),
 );
-const Locations = lazy(() => import("../../pages/Locations"));
+const Locations = lazy(() =>
+  import("../../pages/Locations").then(({ Locations }) => ({
+    default: Locations,
+  })),
+);
 const LocationPage = lazy(() =>
   import("../../pages/LocationPage").then(({ LocationPage }) => ({
     default: LocationPage,
