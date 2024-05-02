@@ -1,0 +1,37 @@
+.nav-list {
+  display: flex;
+  margin-inline: auto;
+  justify-content: center;
+  box-shadow: 0 0 1rem slategray;
+  list-style: none;
+
+  a {
+    padding: 1rem 1.5rem;
+    display: block;
+  }
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+}
+main {
+  background-image: url(@/assets/images/rick-and-morty-smith-adventures-4k-di.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  > .ant-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffe5;
+    backdrop-filter: blur(1rem);
+    > .ant-card-body {
+      overflow: auto;
+    }
+  }
+}
