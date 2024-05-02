@@ -1,54 +1,17 @@
-import React, { lazy } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "../PrivateRoute";
 import { ErrorBoundary } from "../ErrorBoundary";
-
-const Home = lazy(() =>
-  import("../../pages/Home").then(({ Home }) => ({ default: Home })),
-);
-const Episodes = lazy(() =>
-  import("../../pages/Episodes").then(({ Episodes }) => ({
-    default: Episodes,
-  })),
-);
-const MainLayout = lazy(() =>
-  import("../../layouts/MainLayout").then(({ MainLayout }) => ({
-    default: MainLayout,
-  })),
-);
-const EpisodePage = lazy(() =>
-  import("../../pages/EpisodePage").then(({ EpisodePage }) => ({
-    default: EpisodePage,
-  })),
-);
-const Locations = lazy(() =>
-  import("../../pages/Locations").then(({ Locations }) => ({
-    default: Locations,
-  })),
-);
-const LocationPage = lazy(() =>
-  import("../../pages/LocationPage").then(({ LocationPage }) => ({
-    default: LocationPage,
-  })),
-);
-const Characters = lazy(() =>
-  import("../../pages/Characters").then(({ Characters }) => ({
-    default: Characters,
-  })),
-);
-const CharacterPage = lazy(() =>
-  import("../../pages/CharacterPage").then(({ CharacterPage }) => ({
-    default: CharacterPage,
-  })),
-);
-const NotFound = lazy(() =>
-  import("../../pages/NotFound").then(({ NotFound }) => ({
-    default: NotFound,
-  })),
-);
-const Login = lazy(() =>
-  import("../../pages/Login").then(({ Login }) => ({ default: Login })),
-);
+import { Home } from "@/pages/Home/index.lazy";
+import { MainLayout } from "@/layouts/MainLayout/index.lazy";
+import { Episodes } from "@/pages/Episodes/index.lazy";
+import { EpisodePage } from "@/pages/EpisodePage/index.lazy";
+import { Locations } from "@/pages/Locations/index.lazy";
+import { LocationPage } from "@/pages/LocationPage/index.lazy";
+import { Characters } from "@/pages/Characters/index.lazy";
+import { CharacterPage } from "@/pages/CharacterPage/index.lazy";
+import { Login } from "@/pages/Login/index.lazy";
+import { NotFound } from "@/pages/NotFound/index.lazy";
 
 export const AppRoutes = () => {
   return (
