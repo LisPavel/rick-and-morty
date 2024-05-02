@@ -9,8 +9,9 @@ import { compareByCreationDate } from "../../utils";
 
 const { Title } = Typography;
 
+const INITIAL_PAGE = 1;
 export const Locations = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(INITIAL_PAGE);
   const {
     data: locationsArray,
     loading,
