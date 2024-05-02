@@ -1,7 +1,7 @@
-import React from "react";
-import { LocationData } from "../Location";
 import { List } from "antd";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { LocationData } from "../Location";
 import "./LocationsList.scss";
 
 interface Props {

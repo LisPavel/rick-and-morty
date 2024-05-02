@@ -16,7 +16,12 @@ export const CharacterTitle = ({ data }: TitleProps) => {
       <Button
         type="primary"
         shape="circle"
-        icon={<LeftOutlined />}
+        icon={
+          <LeftOutlined
+            onPointerEnterCapture={() => {}}
+            onPointerLeaveCapture={() => {}}
+          />
+        }
         onClick={() => navigate(-1)}
       />
 
