@@ -1,4 +1,3 @@
-import React from "react";
 import "./Episode.scss";
 
 export interface EpisodeData {

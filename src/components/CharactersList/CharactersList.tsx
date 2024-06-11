@@ -1,7 +1,7 @@
-import React from "react";
-import { CharacterData } from "../Character";
 import { Avatar, List, ListProps } from "antd";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { CharacterData } from "../Character";
 import "./CharactersList.scss";
 
 interface Props extends ListProps<CharacterData> {

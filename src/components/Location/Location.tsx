@@ -1,4 +1,3 @@
-import React from "react";
 import "./Location.scss";
 
 export interface LocationData {

@@ -1,5 +1,5 @@
 import { Card, Result } from "antd";
-import React, { Component, ErrorInfo, PropsWithChildren } from "react";
+import { Component, ErrorInfo, PropsWithChildren } from "react";
 
 interface ErrorBoundaryProps extends PropsWithChildren {}
 

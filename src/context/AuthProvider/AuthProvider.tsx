@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 
 import { PropsWithChildren, createContext } from "react";
 
@@ -13,7 +13,6 @@ export interface AuthObj {
 }
 
 export const AuthContext = createContext<AuthObj | null>(null);
-
 
 const USER_KEY = "user";
 

@@ -1,5 +1,4 @@
 import { Card, Typography } from "antd";
-import React from "react";
 
 export const NotFound = () => {
   return (

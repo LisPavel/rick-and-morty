@@ -1,7 +1,6 @@
-import React from "react";
-import { Form, Input, Card, FormProps, Button } from "antd";
-import { useAuth } from "../../hooks/useAuth";
+import { Button, Card, Form, FormProps, Input } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 type FieldType = {
   username?: string;

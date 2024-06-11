@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
 import type { MenuProps } from "antd";
 import { Layout, Menu, Spin } from "antd";
+import { Suspense } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import { ErrorBoundary } from "../../components/ErrorBoundary";
 import "./MainLayout.scss";
 
