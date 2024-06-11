@@ -24,10 +24,6 @@ export default defineConfig({
       },
       devOptions: {
         enabled: true,
-        /* when using generateSW the PWA plugin will switch to classic */
-        navigateFallback: "index.html",
-        suppressWarnings: true,
-        type: "module",
       },
     }),
   ],
