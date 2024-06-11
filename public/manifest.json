@@ -10,132 +10,158 @@
     {
       "src": "pwa-assets/16.png",
       "type": "image/png",
-      "sizes": "16x16"
+      "sizes": "16x16",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/20.png",
       "type": "image/png",
-      "sizes": "20x20"
+      "sizes": "20x20",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/29.png",
       "type": "image/png",
-      "sizes": "29x29"
+      "sizes": "29x29",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/32.png",
       "type": "image/png",
-      "sizes": "32x32"
+      "sizes": "32x32",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/40.png",
       "type": "image/png",
-      "sizes": "40x40"
+      "sizes": "40x40",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/50.png",
       "type": "image/png",
-      "sizes": "50x50"
+      "sizes": "50x50",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/57.png",
       "type": "image/png",
-      "sizes": "57x57"
+      "sizes": "57x57",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/58.png",
       "type": "image/png",
-      "sizes": "58x58"
+      "sizes": "58x58",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/60.png",
       "type": "image/png",
-      "sizes": "60x60"
+      "sizes": "60x60",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/64.png",
       "type": "image/png",
-      "sizes": "64x64"
+      "sizes": "64x64",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/72.png",
       "type": "image/png",
-      "sizes": "72x72"
+      "sizes": "72x72",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/76.png",
       "type": "image/png",
-      "sizes": "76x76"
+      "sizes": "76x76",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/80.png",
       "type": "image/png",
-      "sizes": "80x80"
+      "sizes": "80x80",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/87.png",
       "type": "image/png",
-      "sizes": "87x87"
+      "sizes": "87x87",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/100.png",
       "type": "image/png",
-      "sizes": "100x100"
+      "sizes": "100x100",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/114.png",
       "type": "image/png",
-      "sizes": "114x114"
+      "sizes": "114x114",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/120.png",
       "type": "image/png",
-      "sizes": "120x120"
+      "sizes": "120x120",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/128.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "128x128",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/144.png",
       "type": "image/png",
-      "sizes": "144x144"
+      "sizes": "144x144",
+      "purpose": "any"
     },
     {
       "src": "pwa-assets/152.png",
       "type": "image/png",
-      "sizes": "152x152"
+      "sizes": "152x152",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/167.png",
       "type": "image/png",
-      "sizes": "167x167"
+      "sizes": "167x167",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/180.png",
       "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "180x180",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/256.png",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "256x256",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     },
     {
       "src": "pwa-assets/1024.png",
       "type": "image/png",
-      "sizes": "1024x1024"
+      "sizes": "1024x1024",
+      "purpose": "maskable"
     }
   ]
 }
